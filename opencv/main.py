@@ -10,7 +10,7 @@ while True:
     ret, frame = cap.read()
 
     # スクリーンショットを撮りたい関係で1/4サイズに縮小
-    frame = cv2.resize(frame, (int(frame.shape[1]/4), int(frame.shape[0]/4)))
+    # frame = cv2.resize(frame, (int(frame.shape[1]/4), int(frame.shape[0]/4)))
     # 加工なし画像を表示する
     cv2.imshow('Raw Frame', frame)
 
