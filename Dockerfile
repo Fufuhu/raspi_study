@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM resin/rpi-raspbian
 
 RUN pip install picamera
 COPY main.py ./
