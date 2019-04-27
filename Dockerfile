@@ -1,5 +1,5 @@
-FROM resin/rpi-raspbian
+FROM resin/rpi-raspbian:latest
 
-RUN pip install picamera
-COPY main.py ./
-CMD main.py
+RUN apt-get update && apt-get install -y libraspberrypi-bin
+
+
