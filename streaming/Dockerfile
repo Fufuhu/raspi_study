@@ -12,6 +12,5 @@
 FROM debian:stretch-slim
 RUN echo "deb http://ftp.jp.debian.org/debian sid main contrib non-free" >> /etc/apt/sources.list
 RUN apt-get update && apt-get install -y -t sid python3-opencv python3-pip
-RUN apt-get install -y python3-pip
 RUN python3 --version
 RUN python3 -c 'import cv2; print(cv2.__version__)'
