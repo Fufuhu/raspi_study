@@ -2,13 +2,15 @@ from django.views.generic import View
 from django.shortcuts import render, redirect
 from django.http import StreamingHttpResponse
 import cv2
+import os
 
 from raspi.services.video_camera import VideoCamera
 
 cam =  VideoCamera()
+PATH = os.path.dirname(__file__)
 
 def overlay_logo(frame):
-    img = cv2.imread("/home/fujiwara/repositories/raspi_study/streaming/raspi/views/rancher.png")
+    img = cv2.imread(PATH+'/rancher.png')
     # img = cv2.imread("rancher.png", -1)
 
     rows, cols, _ = img.shape
