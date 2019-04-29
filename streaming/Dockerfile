@@ -14,3 +14,14 @@ RUN echo "deb http://ftp.jp.debian.org/debian sid main contrib non-free" >> /etc
 RUN apt-get update && apt-get install -y -t sid python3-opencv python3-pip
 RUN python3 --version
 RUN python3 -c 'import cv2; print(cv2.__version__)'
+
+EXPOSE 8000
+COPY requirements.txt ./
+RUN pip3 install -r requirements.txt
+
+COPY manage.py ./
+COPY raspi ./raspi
+COPY streaming ./streaming
+
+ENTRYPOINT [ "/bin/sh", "-c" ]
+CMD ["python3 manage.py runserver 0.0.0.0:8000"]

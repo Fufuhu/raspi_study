@@ -4,7 +4,8 @@ import threading
 
 class VideoCamera(object):
     def __init__(self):
-        self.video = cv2.VideoCapture('http://hoge:hoge@192.168.1.98:8080/?action=stream') 
+        # self.video = cv2.VideoCapture('http://hoge:hoge@192.168.1.98:8080/?action=stream') 
+        self.video = cv2.VideoCapture('http://hoge:hoge@192.168.0.3:8080/?action=stream') 
         (self.grabbed, self.frame) = self.video.read()
         threading.Thread(target=self.update, args=()).start()
 
