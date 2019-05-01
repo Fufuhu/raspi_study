@@ -7,7 +7,7 @@ metadata:
 spec:
   ports:
   - name: mjpg-streamer-port-lb
-    port: 8081
+    port: 8080
     protocol: TCP
     targetPort: 8080
   - name: django-mjpg-port-lb
