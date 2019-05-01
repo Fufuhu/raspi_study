@@ -10,6 +10,10 @@ spec:
     port: 8081
     protocol: TCP
     targetPort: 8080
+  - name: django-mjpg-port-lb
+    port: 8000
+    protocol: TCP
+    targetPort: 8000
   selector:
     app: mjpg-streamer
   type: LoadBalancer

@@ -17,14 +17,18 @@ spec:
     spec:
       containers:
       - image: fufuhu/mjpg-streamer
-        name: deployment-mjpg-streamer
+        name: mjpg-streamer
         securityContext:
           privileged: true
         ports:
-        - containerPort: 8000
+        - containerPort: 8080
         volumeMounts:
         - mountPath: /mnt
           name: volume-device
+      - image: fufuhu/django-mjpg
+        name: django-mjpg
+        ports:
+        - containerPort: 8000
       volumes:
       - name: volume-device
         hostPath:
