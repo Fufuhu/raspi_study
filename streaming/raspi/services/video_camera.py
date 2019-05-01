@@ -2,10 +2,12 @@ import time
 import cv2
 import threading
 
+DEFAULT_CAMERA_URL = 'http://hoge:hoge@localhost:8080/?action=stream'
+
 class VideoCamera(object):
-    def __init__(self):
-        # self.video = cv2.VideoCapture('http://hoge:hoge@192.168.1.98:8080/?action=stream') 
-        self.video = cv2.VideoCapture('http://hoge:hoge@192.168.0.3:8080/?action=stream') 
+    def __init__(self, mjpg_host=DEFAULT_CAMERA_URL):
+        
+        self.video = cv2.VideoCapture(mjpg_url)
         (self.grabbed, self.frame) = self.video.read()
         threading.Thread(target=self.update, args=()).start()
 
