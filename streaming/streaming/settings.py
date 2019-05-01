@@ -119,3 +119,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# カメラ系URLを取得する
+CAMERA_URL_STREAM = os.getenv('CAMERA_URL_STREAM', 'http://hoge:hoge@localhost:8080/?action=stream')
+print(CAMERA_URL_STREAM)
+
+CAMERA_IMAGE_DIRECTORY = os.getenv('CAMERA_IMEGE_DIRECTORY', os.path.dirname(__file__))
+print(CAMERA_IMAGE_DIRECTORY)

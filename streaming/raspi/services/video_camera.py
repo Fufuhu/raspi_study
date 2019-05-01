@@ -1,8 +1,9 @@
 import time
 import cv2
 import threading
+from streaming import settings
 
-DEFAULT_CAMERA_URL = 'http://hoge:hoge@localhost:8080/?action=stream'
+DEFAULT_CAMERA_URL = settings.CAMERA_URL_STREAM
 
 class VideoCamera(object):
     def __init__(self, mjpg_host=DEFAULT_CAMERA_URL):
