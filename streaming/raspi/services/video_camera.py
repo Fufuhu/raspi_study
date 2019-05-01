@@ -7,7 +7,7 @@ DEFAULT_CAMERA_URL = 'http://hoge:hoge@localhost:8080/?action=stream'
 class VideoCamera(object):
     def __init__(self, mjpg_host=DEFAULT_CAMERA_URL):
         
-        self.video = cv2.VideoCapture(mjpg_url)
+        self.video = cv2.VideoCapture(mjpg_host)
         (self.grabbed, self.frame) = self.video.read()
         threading.Thread(target=self.update, args=()).start()
 
