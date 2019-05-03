@@ -105,3 +105,5 @@ venv.bak/
 
 raspi_study/
 .vscode/
+s3-uploader/
+secrets/
