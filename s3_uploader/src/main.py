@@ -3,12 +3,17 @@ from watchdog.observers import Observer
 
 import os
 import time
+from s3_manipulator import S3Manipurator
 
 class ChangeHandler(FileSystemEventHandler):
     def on_created(self, event):
+        manipulator = S3Manipurator(bucket_name='raspi-demo')
+
         filepath = event.src_path
         filename = os.path.basename(filepath)
         print("%sが作成されました。" % filename)
+
+        manipulator.upload(filepath)
     
     def on_modified(self, event):
         pass
@@ -17,6 +22,8 @@ class ChangeHandler(FileSystemEventHandler):
         pass
 
 if __name__ in '__main__':
+
+
     while True:
         event_handler = ChangeHandler()
 
