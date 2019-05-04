@@ -3,7 +3,13 @@ import os
 
 
 class S3Manipurator():
-    def __init__(self, bucket_name, aws_access_key_id=None, aws_secret_access_key=None):
+    def __init__(self, bucket_name=None, aws_access_key_id=None, aws_secret_access_key=None):
+
+        if bucket_name is not None:
+            self.bucket_name = bucket_name
+        else:
+            self.bucket_name = os.getenv('BUCKET_NAME')
+
         self.bucket_name = bucket_name # 'raspi-demo'
     
         if aws_access_key_id is not None:

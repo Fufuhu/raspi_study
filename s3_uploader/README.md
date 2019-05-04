@@ -13,4 +13,5 @@
 |AWS_ACCESS_KEY_ID|AWSのアクセスキーID|dummy|
 |AWS_SECRET_ACCESS_KEY|AWSのシークレットアクセスキー|dummy|
 |TARGET_DIR|ファイル作成を監視するディレクトリ|/tmp|
+|BUCKET_NAME|ファイルアップロード先のバケット|dummy|
 
