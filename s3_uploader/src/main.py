@@ -7,7 +7,7 @@ from s3_manipulator import S3Manipurator
 
 class ChangeHandler(FileSystemEventHandler):
     def on_created(self, event):
-        manipulator = S3Manipurator(bucket_name='raspi-demo')
+        manipulator = S3Manipurator()
 
         filepath = event.src_path
         filename = os.path.basename(filepath)
