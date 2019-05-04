@@ -10,7 +10,6 @@ class S3Manipurator():
         else:
             self.bucket_name = os.getenv('BUCKET_NAME')
 
-        self.bucket_name = bucket_name # 'raspi-demo'
     
         if aws_access_key_id is not None:
             self.aws_access_key_id = aws_access_key_id
