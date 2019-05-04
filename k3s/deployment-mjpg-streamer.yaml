@@ -29,7 +29,15 @@ spec:
         name: django-mjpg
         ports:
         - containerPort: 8000
+        volumeMounts:
+        - mountPath: /tmp
+          name: volume-tmp
+        envFrom:
+        - configMapRef:
+            name: configmap-mjpg-streamer
       volumes:
       - name: volume-device
         hostPath:
           path: /dev
+      - name: volume-tmp
+        emptyDir: {}
