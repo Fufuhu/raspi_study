@@ -35,7 +35,7 @@ spec:
         envFrom:
         - configMapRef:
             name: configmap-mjpg-streamer
-      - image: fufuhu/s3-uploder
+      - image: fufuhu/s3-uploader
         name: s3-uploader
         volumeMounts:
         - mountPath: /tmp
