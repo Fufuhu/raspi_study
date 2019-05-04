@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
+from image_gallery.settings import IMAGE_ROOT, IMAGE_URL
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('viewer/', include('viewer.urls')),
 ]
+
+# urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(IMAGE_URL, document_root=IMAGE_ROOT)
