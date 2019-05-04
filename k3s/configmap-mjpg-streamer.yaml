@@ -5,3 +5,4 @@ metadata:
 data:
   CAMERA_URL_STREAM: "http://hoge:hoge@localhost:8080/?action=stream"
   CAMERA_IMAGE_DIRECTORY: "/tmp"
+  TARGET_DIR: "/tmp"
