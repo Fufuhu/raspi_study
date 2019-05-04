@@ -107,3 +107,4 @@ raspi_study/
 .vscode/
 s3-uploader/
 secrets/
+k3s/secret-mjpg-streamer.yaml
